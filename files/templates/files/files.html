@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cloud Storage</title>
-  </head>
-  <body>
-    <ul>
-      {% for file in files %}
-      <li>{{ file.name }} {{ file.size }}</li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+{% extends "files/site.html" %} {% block body %} 
+{% if files %}
+<ul>
+  {% for file in files %}
+  <li><a href="{% url 'file' file.id %}">{{ file.name }} {{ file.size }}</a></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No files found</p>
+{% endif %} {% endblock %}

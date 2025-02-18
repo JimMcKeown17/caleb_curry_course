@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('files/', views.files, name='files'),
+    path('files/<int:file_id>', views.file, name='file'),
 ]

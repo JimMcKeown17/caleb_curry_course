@@ -1,0 +1,7 @@
+{% extends "files/site.html" %} 
+{% block title %}File {{ file_id }}{% endblock %}
+{% block body %}
+<h1>File Name: {{ file.name }}</h1>
+<p>Size: {{ file.size }}</p>
+<a href="{% url 'files' %}">Go back to files</a>
+{% endblock %}
